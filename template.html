@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Resumen del Análisis</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="minimum-scale=1, initial-scale=1, width=device-width"
+    />
+    <script
+      src="https://unpkg.com/react@latest/umd/react.development.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"></script>
+    <script
+      src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.development.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/babel-standalone@latest/babel.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Fonts to support Material Design -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Icons to support Material Design -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const data = $data;
+
+      const {
+        colors,
+        CssBaseline,
+        ThemeProvider,
+        Typography,
+        Container,
+        makeStyles,
+        createMuiTheme,
+        Box,
+        SvgIcon,
+        Link,
+        TableContainer,
+        Table,
+        TableHead,
+        TableBody,
+        TableCell,
+        TableRow,
+        Paper,
+        List,
+        ListItem,
+        ListItemIcon,
+        ListItemText,
+        Divider,
+        Icon,
+      } = MaterialUI;
+
+      // Create a theme instance.
+      const theme = createMuiTheme({
+        palette: {
+          primary: {
+            main: "#556cd6",
+          },
+          secondary: {
+            main: "#19857b",
+          },
+          error: {
+            main: colors.red.A400,
+          },
+          background: {
+            default: "#fff",
+          },
+        },
+      });
+
+      const useStyles = makeStyles((theme) => ({
+        root: {
+          width: "100%",
+        },
+        container: {
+          maxHeight: 440,
+        },
+      }));
+
+      function TableItem() {
+        const classes = useStyles();
+        return (
+          <TableContainer component={Paper} className={classes.container}>
+            <Table
+              stickyHeader
+              className={classes.table}
+              size="small"
+              aria-label="a dense table"
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell>Productos Únicos</TableCell>
+                  <TableCell>Items Publicados</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {data.map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell component="th" scope="row">
+                      {row[0]}
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      {row.length}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        );
+      }
+
+      function Copyright() {
+        return (
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            align="center"
+            style={{ padding: "1rem" }}
+          >
+            {"Made by "}
+            <Link color="inherit" href="https://camiloromero.dev/">
+              Camilo Romero
+            </Link>
+          </Typography>
+        );
+      }
+
+      function Review() {
+        return (
+          <div>
+            <List component="nav" aria-label="main mailbox folders">
+              <ListItem button>
+                <ListItemIcon>
+                  <Icon>public</Icon>
+                </ListItemIcon>
+                <ListItemText primary="URL Analizada" />
+                <ListItemText primary="$url" />
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <Icon>category</Icon>
+                </ListItemIcon>
+                <ListItemText primary="Productos Únicos" />
+                <ListItemText primary="$products" />
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <Icon>shopping_cart</Icon>
+                </ListItemIcon>
+                <ListItemText primary="Items Publicados" />
+                <ListItemText primary="$items" />
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <Icon>functions</Icon>
+                </ListItemIcon>
+                <ListItemText primary="Indice de Similitud" />
+                <ListItemText primary="$similarity" />
+              </ListItem>
+            </List>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <Container maxWidth="sm">
+            <div style={{ marginTop: 24 }}>
+              <Typography variant="h4" component="h1" gutterBottom>
+                Resumen del Análisis
+              </Typography>
+              <Review />
+              <TableItem />
+              <Copyright />
+            </div>
+          </Container>
+        );
+      }
+
+      ReactDOM.render(
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <App />
+        </ThemeProvider>,
+        document.querySelector("#root")
+      );
+    </script>
+  </body>
+</html>
