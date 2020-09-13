@@ -9,7 +9,6 @@ Web Scrapper diseñado para recorrer las primeras 5 paginas de búsqueda de un p
 3. Uso
    - Scrapper
    - Analyzer
-   - Reporte
 4. Librerías 
 
 ### 1 Requerimientos
@@ -68,6 +67,8 @@ El reporte del analisis se puede exportar en formato JSON para reutilizar la dat
 
 A continuacion se requiere un indice de similitud para agrupar los items obtenidos en el scrapping basados en la similitud del contenido, este indice se encuentra en el rango de 0 - 1, siendo 0 el indice donde se evalua todo el contenido del texto y se determina que un item es igual que otro por algunas palabras clave, en cambio en el indice 1 se evalua la similitud del contenido absoluta, para determinar que un item es igual a otro por todo el contenido del titulo.
 
+Esta agrupacion se realiza utilizando el clustering para agrupar datos basado en el indice de similitud.
+
 Eg.
 
 Xiaomi Redmi Note 9 Dual SIM 128 GB Gris medianoche 4 GB RAM usando el indice 0 puede ser igual considerado un mismo producto que Xiaomi Redmi Note 8 Dual SIM 64 GB Negro espacial 4 GB RAM por las palabras clave Xiaomi, Redmi y Note.
@@ -86,7 +87,15 @@ Si escogio la opcion de visualizar el resumen en HTML obtendra una pagina desarr
 
 <img src="https://raw.githubusercontent.com/kmorope/MeLiScrapper/master/Images/9.png" alt="Report" width="750"><br>
 
+### 4 Librerias
 
+- [puppeteer]: https://github.com/GoogleChrome/puppeteer
+- [set-clustering]: https://github.com/deestan/set-clustering
+- [reactJS]: https://github.com/facebook/react
+- [enquirer]: https://github.com/enquirer/enquirer
+- [difflib]: https://github.com/qiao/difflib.js
+- [chalk]: https://github.com/chalk/chalk
+- [underscore]: https://github.com/jashkenas/underscore
 
 
 
