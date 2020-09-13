@@ -89,13 +89,13 @@ Si escogio la opcion de visualizar el resumen en HTML obtendra una pagina desarr
 
 ### 4 Librerias
 
-- [puppeteer]: https://github.com/GoogleChrome/puppeteer
-- [set-clustering]: https://github.com/deestan/set-clustering
-- [reactJS]: https://github.com/facebook/react
-- [enquirer]: https://github.com/enquirer/enquirer
-- [difflib]: https://github.com/qiao/difflib.js
-- [chalk]: https://github.com/chalk/chalk
-- [underscore]: https://github.com/jashkenas/underscore
+- https://github.com/GoogleChrome/puppeteer
+- https://github.com/deestan/set-clustering
+- https://github.com/facebook/react
+- https://github.com/enquirer/enquirer
+- https://github.com/qiao/difflib.js
+- https://github.com/chalk/chalk
+- https://github.com/jashkenas/underscore
 
 
 
